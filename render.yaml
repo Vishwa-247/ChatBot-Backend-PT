@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: ai-chatbot-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: MONGO_URI
+        value: "mongodb+srv://vishwa:chatbootpt@chatbotpt.98g3vwh.mongodb.net/"
+      - key: GEMINI_API_KEY
+        sync: false  # You'll set this in Render dashboard
+      - key: GROQ_API_KEY
+        sync: false  # You'll set this in Render dashboard
+      - key: CLOUDINARY_CLOUD_NAME
+        value: "daoymzszl"
+      - key: CLOUDINARY_API_KEY
+        value: "887668153728379"
+      - key: CLOUDINARY_API_SECRET
+        value: "C499vZns44C0lJ-tEWr4flp8vr8" 
